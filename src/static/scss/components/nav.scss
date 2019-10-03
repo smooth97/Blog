@@ -1,0 +1,42 @@
+nav {
+    width: 100vw;
+    height: 10vh;
+    border-bottom: 1.2px solid $color-light-gray;
+
+    .navContainer {
+        margin: auto;
+        width: 90vw;
+        height: 100%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $color-light-gray;
+
+        h1 {
+            font-size: 25px;
+            font-weight: 800;
+            transition: all 0.3s ease-in;
+        }
+
+
+        .icons {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                margin-left: 15px;
+                transition: all 0.3s ease-in;
+
+                :hover {
+                    color: $color-gray;
+                }
+            }
+        }
+    }
+}

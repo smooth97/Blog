@@ -1,0 +1,22 @@
+@import './abstructs/variable.scss';
+@import './abstructs/function.scss';
+
+@import './components/item.scss';
+@import './components/nav.scss';
+@import './components/post.scss';
+@import './components/new.scss';
+@import './components/form.scss';
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $color-light-gray;
+
+    :hover {
+        color: $color-purple;
+    }
+}

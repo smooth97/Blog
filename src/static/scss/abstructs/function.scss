@@ -1,0 +1,18 @@
+@mixin h2-style () {
+    .id {
+        width: 13%;
+    }
+
+    .title {
+        width: 35%;
+        
+    }
+
+    .date {
+        width: 30%
+    }
+
+    .action {
+        width: 20%;
+    }
+}
