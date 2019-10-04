@@ -3,10 +3,21 @@ main {
     width: 90vw;
     height: 90vh;
 
-    h1 {
-        color: $color-dark-gray;
-        font-weight: 400;
-        font-size: 40px;
+    .homeContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+            color: $color-dark-gray;
+            font-weight: 400;
+            font-size: 40px;
+        }
+
+        .new {
+            font-size: 30px;
+            color: $color-purple;
+        }
     }
 
     .postContainer {

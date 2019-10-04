@@ -7,11 +7,13 @@ const Home = () => {
 
     return (
         <main>
-            <h1>POST</h1>
+            <div className="homeContainer">
+                <h1>POST</h1>
+                <Link to="/new" className="new">
+                    <MdAdd/>
+                </Link>
+            </div>
             <Posts/>
-            <Link to="/new">
-                <MdAdd/>
-            </Link>
         </main>
     )
 }
