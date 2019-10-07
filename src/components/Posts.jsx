@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import Item from "../container/Item";
-import { PostingContext } from "./PostContext";
 
 const Posts = () => {
-  const [postings, setPostings] = useContext(PostingContext);
 
   return (
     <div className="postContainer">
