@@ -4,8 +4,6 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { MdGetApp } from "react-icons/md";
 
 const New = () => {
-  //MdGetApp
-
   return (
     <div className="newContainer">
       <div className="btn">
