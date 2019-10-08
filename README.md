@@ -8,6 +8,7 @@ ScreenShots
 ----------------
 <div>
 <img width="500" src="./static/images/home.JPG">
+  C:\Users\user\Desktop\Work\Github\react-blog\src\static\images\delete.JPG
 </div>
 
 ### Tools
