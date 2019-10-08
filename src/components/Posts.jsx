@@ -4,11 +4,13 @@ import Item from "../container/Item";
 
 const Posts = ({onCreate, onToggle, posts}) => {
 
-  const dates = new Date();
-    const year = dates.getFullYear();
-    const month = dates.getMonth();
-    const day = dates.getDate();
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1 ;
+    const day = today.getDate();
     const now = `${year}-${month}-${day}`;
+
+    console.log(now);
 
   return (
     <div className="postContainer">

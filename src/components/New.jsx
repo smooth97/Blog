@@ -30,6 +30,10 @@ const New = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     onCreate(title, des);
+    setInputs({
+      title: '',
+      des: ''
+    });
   }
 
   return (
