@@ -30,7 +30,6 @@ const New = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     onCreate(title, des);
-    setInputs('');
   }
 
   return (
@@ -40,7 +39,9 @@ const New = () => {
         <Link to="/">
           <IoMdArrowRoundBack className="back" />
         </Link>
-        <button onSubmit={onSubmit}><MdGetApp className="save"/></button>
+        <button onSubmit={onSubmit}>
+          <MdGetApp className="save"/>
+        </button>
       </div>
         <div className="titleContainer">
           <input
