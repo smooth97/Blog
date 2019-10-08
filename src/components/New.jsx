@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { addPosting, deletePosting } from "../store/actions";
+import { addPosting } from "../store/actions";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MdGetApp } from "react-icons/md";

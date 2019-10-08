@@ -14,6 +14,7 @@ export const addPosting = (title, description) => {
         }
     };
 }
+
 export const editPosting = (id) => {
     return {
         type: EDIT_POSTING,
