@@ -2,12 +2,12 @@ export const ADD_POSTING = 'ADD_POSTING';
 export const EDIT_POSTING = 'EDIT_POSTING';
 export const DELETE_POSTING = 'DELETE_POSTING';
 
-const nextId = 3;
+let nextId = 2;
 
 export const addPosting = (title, description) => {
     return {
         type: ADD_POSTING,
-        posting: {
+        post: {
             id: nextId++,
             title,
             description

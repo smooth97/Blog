@@ -1,33 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { addPosting, deletePosting } from "../store/actions";
 import { Link } from "react-router-dom";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { MdGetApp } from "react-icons/md";
 
 const New = () => {
+  // redux
+  const posts = useSelector(state => state.posts);
+  const dispatch = useDispatch();
+
+  const onCreate = (title, des) => dispatch(addPosting(title, des));
+
+  // input
+  const [inputs, setInputs] = useState({
+    title: '',
+    des: ''
+  });
+  const {title, des} = inputs;
+
+  const onChange = (e) => {
+    const {value, name} =  e.target;
+    setInputs({
+      ...inputs,
+      [name] : value
+    })
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onCreate(title, des);
+    setInputs('');
+  }
+
   return (
     <div className="newContainer">
-      <div className="btn">
+        <form onSubmit={onSubmit}>
+        <div className="btn">
         <Link to="/">
           <IoMdArrowRoundBack className="back" />
         </Link>
-        <MdGetApp className="save" />
+        <button onSubmit={onSubmit}><MdGetApp className="save"/></button>
       </div>
-      <div className="titleContainer">
-        <form>
+        <div className="titleContainer">
           <input
             type="text"
-            name="todo list"
+            name="title"
             autoComplete="off"
             required
-            //   value={input}
-            //   onChange={onChange}
+            value={title}
+            onChange={onChange}
           />
           <label htmlFor="name" className="label-name">
             <span className="content-name">Title</span>
           </label>
+          </div>
+          <div className="desContainer">
+            <textarea name="des" cols="30" rows="10" required value={des} onChange={onChange}></textarea>
+          </div>
         </form>
-      </div>
-      <textarea cols="30" rows="10" required></textarea>
     </div>
   );
 };

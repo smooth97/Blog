@@ -1,20 +1,25 @@
 import { ADD_POSTING, EDIT_POSTING, DELETE_POSTING } from "../actions"
 
-const initialState = {
-    input: '',
-    postings: [
-        
-    ]
-}
+const initialState = [
+    {
+        id: 1,
+        title: ' This is First Post',
+        description: '포스팅 1',
+    }
+]
 
-const postingReducer = (state = initialState, action) => {
+const posts = (state = initialState, action) => {
     switch (action.type) {
+        case ADD_POSTING:
+            return state.concat(action.post);
+        case DELETE_POSTING:
+            return state.filter(post => post.id !== action.id)
         default:
           return state;
       }
 };
 
-export default postingReducer;
+export default posts;
 
 // {
 //     id: 1,
