@@ -1,0 +1,33 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.16);
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 80vh;
+        background: white;
+
+        .title {
+            width: 90%;
+            height: 10%;
+            margin: auto;
+            border-bottom: 1px solid black;
+        }
+
+        .des {
+            width: 90%;
+            height: 80%;
+            margin: auto;
+            margin-top: 3%;
+            background: gray;
+        }
+    }
+}

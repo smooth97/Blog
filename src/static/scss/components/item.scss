@@ -6,12 +6,20 @@
     border-bottom: 1px solid $color-light-gray;
     align-items: center;
     text-align: center;
+    position: relative;
+
+    .modalOpen {
+        width: 80%;
+        height: 100%;
+        position: absolute;
+    }
 
     h2 {
         font-size: 14px;
         font-weight: 600;
         color: $color-gray;
     }
+
     @include h2-style;
 
     .icon {

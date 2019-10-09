@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addPosting } from "../store/actions";
-import { Link } from "react-router-dom";
-import { IoMdArrowRoundBack } from "react-icons/io";
-import { MdGetApp } from "react-icons/md";
+import { addPosting } from '../store/actions';
+import { Link } from 'react-router-dom';
+import { IoMdArrowRoundBack } from 'react-icons/io';
+import { MdGetApp } from 'react-icons/md';
 
 const New = () => {
   // redux
@@ -15,38 +15,38 @@ const New = () => {
   // input
   const [inputs, setInputs] = useState({
     title: '',
-    des: ''
+    des: '',
   });
-  const {title, des} = inputs;
+  const { title, des } = inputs;
 
-  const onChange = (e) => {
-    const {value, name} =  e.target;
+  const onChange = e => {
+    const { value, name } = e.target;
     setInputs({
       ...inputs,
-      [name] : value
-    })
-  }
+      [name]: value,
+    });
+  };
 
-  const onSubmit = (e) => {
+  const onSubmit = e => {
     e.preventDefault();
     onCreate(title, des);
     setInputs({
       title: '',
-      des: ''
+      des: '',
     });
-  }
+  };
 
   return (
     <div className="newContainer">
-        <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <div className="btn">
-        <Link to="/">
-          <IoMdArrowRoundBack className="back" />
-        </Link>
-        <button onSubmit={onSubmit}>
-          <MdGetApp className="save"/>
-        </button>
-      </div>
+          <Link to="/">
+            <IoMdArrowRoundBack className="back" />
+          </Link>
+          <button onSubmit={onSubmit}>
+            <MdGetApp className="save" />
+          </button>
+        </div>
         <div className="titleContainer">
           <input
             type="text"
@@ -59,11 +59,18 @@ const New = () => {
           <label htmlFor="name" className="label-name">
             <span className="content-name">Title</span>
           </label>
-          </div>
-          <div className="desContainer">
-            <textarea name="des" cols="30" rows="10" required value={des} onChange={onChange}></textarea>
-          </div>
-        </form>
+        </div>
+        <div className="desContainer">
+          <textarea
+            name="des"
+            cols="30"
+            rows="10"
+            required
+            value={des}
+            onChange={onChange}
+          ></textarea>
+        </div>
+      </form>
     </div>
   );
 };
