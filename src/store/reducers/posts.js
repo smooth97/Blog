@@ -7,7 +7,7 @@ import {
 const initialState = [{
     id: 1,
     title: ' This is First Post',
-    description: '포스팅 1',
+    description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
 }]
 
 const posts = (state = initialState, action) => {
@@ -17,15 +17,12 @@ const posts = (state = initialState, action) => {
         case DELETE_POSTING:
             return state.filter(post => post.id !== action.id);
         case UPDATE_POSTING:
-            return state.map(post => post.id === action.id ?
-                ({
-                    ...state,
-                    id: post.id,
-                    title: post.title,
-                    description: post.des
-                }) :
-                post
-            )
+            return state.map((post) => {
+                if (post.id === action.id) {
+                    return post = action.payload
+                }
+                return post
+            })
         default:
             return state;
     }
@@ -37,3 +34,17 @@ export default posts;
 //     ...action.post,
 // } :
 // post
+
+// return state.map(post => {
+//     if(post.id === action.id){
+//        return {
+//            ...post,
+//            ...action.title,
+//            ...action.description
+//        }
+
+//     } else {
+//         return post
+//     }
+//   }
+//  )

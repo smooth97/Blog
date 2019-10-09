@@ -36,8 +36,8 @@ const Modal = ({ post, modal, close }) => {
   };
 
   return (
-    // <React.Fragment>
-    //   {modal ? (
+    <React.Fragment>
+      {modal ? (
     <React.Fragment>
       <div className="modal-container">
         <form className="modal" onSubmit={onSubmit}>
@@ -67,8 +67,8 @@ const Modal = ({ post, modal, close }) => {
         </form>
       </div>
     </React.Fragment>
-    //   ) : null}
-    // </React.Fragment>
+      ) : null}
+    </React.Fragment>
   );
 };
 

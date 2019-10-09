@@ -17,11 +17,13 @@ export const addPosting = (title, description) => {
     };
 }
 
-export const updatePosting = (id, title, description) => {
+export const updatePosting = (post) => {
     return {
         type: UPDATE_POSTING,
-        title,
-        description
+        payload: {
+        title: post.title,
+        description: post.description
+        }
     }
 }
 
