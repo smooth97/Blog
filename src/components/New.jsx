@@ -6,7 +6,7 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 import { MdGetApp } from 'react-icons/md';
 
 const New = () => {
-  // redux
+  // create redux
   const posts = useSelector(state => state.posts);
   const dispatch = useDispatch();
 
@@ -17,6 +17,7 @@ const New = () => {
     title: '',
     des: '',
   });
+
   const { title, des } = inputs;
 
   const onChange = e => {

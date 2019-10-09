@@ -1,8 +1,7 @@
-
 // 액션 타입 정의
 export const ADD_POSTING = 'ADD_POSTING';
-export const EDIT_POSTING = 'EDIT_POSTING';
 export const DELETE_POSTING = 'DELETE_POSTING';
+export const UPDATE_POSTING = 'UPDATE_POSTING';
 
 let nextId = 2;
 
@@ -18,10 +17,11 @@ export const addPosting = (title, description) => {
     };
 }
 
-export const editPosting = (id) => {
+export const updatePosting = (id, title, description) => {
     return {
-        type: EDIT_POSTING,
-        id
+        type: UPDATE_POSTING,
+        title,
+        description
     }
 }
 
