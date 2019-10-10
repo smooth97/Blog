@@ -31,18 +31,20 @@ const Item = React.memo(function Item({ post, date, onToggle }) {
   };
 
   return (
-    <div className="itemContainer">
-      <div className="modalOpen" onClick={openModal}></div>
-      <h2 className="id">{post.id}</h2>
-      <h2 className="title">{post.title}</h2>
-      <h2 className="date">{date}</h2>
-      <h2 className="action edit">
-        <MdModeEdit className="icon" onClick={openModal} />
-        <MdDelete className="icon" onClick={onClick} />
-      </h2>
-      <Confirm post={post} open={open} remove={remove} close={close} />
-      <Modal post={post} modal={modal} close={closeModal} />
-    </div>
+    <>
+      <div className="itemContainer">
+        <div className="modalOpen" onClick={openModal}></div>
+        <h2 className="id">{post.id}</h2>
+        <h2 className="title">{post.title}</h2>
+        <h2 className="date">{date}</h2>
+        <h2 className="action edit">
+          <MdModeEdit className="icon" onClick={openModal} />
+          <MdDelete className="icon" onClick={onClick} />
+        </h2>
+        <Confirm post={post} open={open} remove={remove} close={close} />
+        <Modal post={post} modal={modal} close={closeModal} />
+      </div>
+    </>
   );
 });
 

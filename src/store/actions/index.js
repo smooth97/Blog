@@ -17,12 +17,13 @@ export const addPosting = (title, description) => {
     };
 }
 
-export const updatePosting = (post) => {
+export const updatePosting = (id, title, description) => {
     return {
         type: UPDATE_POSTING,
-        payload: {
-        title: post.title,
-        description: post.description
+        post: {
+            id: id,
+            title,
+            description
         }
     }
 }
@@ -33,3 +34,13 @@ export const deletePosting = (id) => {
         id
     }
 }
+
+// export const updatePosting = (post) => {
+//     return {
+//         type: UPDATE_POSTING,
+//         payload: {
+//         title: post.title,
+//         description: post.description
+//         }
+//     }
+// }

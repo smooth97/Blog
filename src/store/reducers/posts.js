@@ -17,18 +17,21 @@ const posts = (state = initialState, action) => {
         case DELETE_POSTING:
             return state.filter(post => post.id !== action.id);
         case UPDATE_POSTING:
-            return state.map((post) => {
-                if (post.id === action.id) {
-                    return post = action.payload
-                }
-                return post
-            })
+            const filtered = state.filter((post) => post.id !== action.post.id);
+            return [...filtered, action.post];
         default:
             return state;
     }
 };
 
 export default posts;
+
+// // find the id which are trying to update with new title and description
+// const filtered = state.map((post) => post.id === action.payload.id);
+// filtered.title = action.payload.title;
+// filtered.description = action.payload.description;
+// return filtered; //according your need post this
+
 
 // post => post.id === action.id ? {
 //     ...action.post,

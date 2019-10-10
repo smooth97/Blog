@@ -7,8 +7,8 @@ const Modal = ({ post, modal, close }) => {
   const posts = useSelector(state => state.posts);
   const dispatch = useDispatch();
 
-  const onUpdate = (title, description) =>
-    dispatch(updatePosting(title, description));
+  const onUpdate = (id, title, description) =>
+    dispatch(updatePosting(id, title, description));
 
   // inputs
   const [inputs, setInputs] = useState({
@@ -38,35 +38,35 @@ const Modal = ({ post, modal, close }) => {
   return (
     <React.Fragment>
       {modal ? (
-    <React.Fragment>
-      <div className="modal-container">
-        <form className="modal" onSubmit={onSubmit}>
-          <div className="title">
-            <input
-              className="titleInput"
-              type="text"
-              name="title"
-              required
-              value={title}
-              onChange={onChange}
-            />
-            <button onClick={close}>x</button>
+        <React.Fragment>
+          <div className="modal-container">
+            <form className="modal" onSubmit={onSubmit}>
+              <div className="title">
+                <input
+                  className="titleInput"
+                  type="text"
+                  name="title"
+                  required
+                  value={title}
+                  onChange={onChange}
+                />
+                <button onClick={close}>x</button>
+              </div>
+              <div className="des">
+                <textarea
+                  name="description"
+                  className="modal-des"
+                  cols="30"
+                  rows="10"
+                  required
+                  value={description}
+                  onChange={onChange}
+                ></textarea>
+              </div>
+              <button onSubmit={onSubmit}>submit</button>
+            </form>
           </div>
-          <div className="des">
-            <textarea
-              name="description"
-              className="modal-des"
-              cols="30"
-              rows="10"
-              required
-              value={description}
-              onChange={onChange}
-            ></textarea>
-          </div>
-          <button onSubmit={onSubmit}>submit</button>
-        </form>
-      </div>
-    </React.Fragment>
+        </React.Fragment>
       ) : null}
     </React.Fragment>
   );
